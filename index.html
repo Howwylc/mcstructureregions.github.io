@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <!-- basic.html -->
+  <title>basic.html</title>
+  <meta charset = "UTF-8" />
+</head>
+<body>
+
+  <h1>Structure Region Viewer</h1>
+
+  <p>This is a model to help visualize structure regions in Minecraft</p>
+  <ul>
+	<li>The <b style="color: #35F652">green</b> sections represent areas in which the structure can spawn.</li>
+	<li>The <b style="color: #F33B40">red</b> sections represent areas in which the structure can not spawn.</li>
+	<li>These regions repeat infinitely in the same pattern of squares. Only the first region in each direction from (0,0) is modeled.</li>
+
+  <input type="checkbox" onclick="monumentButton()" id="monument" name="monument" checked></input>
+	<label for="monument">Monument Regions</label><br>
+  <input type="checkbox" onclick="oceanruinButton()" id="oceanruin" name="oceanruin" checked></input>
+	<label for="oceanruin">Ocean Ruin Regions</label><br>
+  <input type="checkbox" onclick="oldstructuresButton()" id="oldstructures" name="oldstructures" checked></input>
+	<label for="oldstructures">Old Structures (desert pyramids, igloos, jungle pyramids/temples, outposts, villages) Regions</label><br>
+  <input type="checkbox" onclick="ruinedportalButton()" id="ruinedportal" name="ruinedportal" checked></input>
+	<label for="ruinedportal">Ruined Portal Regions</label><br>
+  <input type="checkbox" onclick="shipwreckButton()" id="shipwreck" name="shipwreck" checked></input>
+	<label for="shipwreck">Shipwreck Regions</label><br>
+
+  <div id="monumentImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.5"> <img src="monument.png"> </div>
+  <div id="oceanruinImage" style="left: 492px; top: 592px; position: absolute; visibility: visible; opacity:0.5"> <img src="oceanruin.png"> </div>
+  <div id="oldstructuresImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.5"> <img src="oldstructures.png"> </div>
+  <div id="ruinedportalImage" style="left: 172px; top: 272px; position: absolute; visibility: visible; opacity:0.5"> <img src="ruined portal.png"> </div>
+  <div id="shipwreckImage" style="left: 428px; top: 528px; position: absolute; visibility: visible; opacity:0.5"> <img src="shipwreck.png"> </div>
+
+  <div style="position: fixed; top: 0; width: 100%; overflow: hidden; background-color: #7ed7ed;">
+  	<input type="text" id="cursorX" size="3"> X-position of the player
+  	<input type="text" id="cursorY" size="3"> Y-position of the player
+  </div>
+
+</body>
+
+<script>
+function monumentButton() {
+  var x = document.getElementById("monumentImage");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function oceanruinButton() {
+  var x = document.getElementById("oceanruinImage");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function oldstructuresButton() {
+  var x = document.getElementById("oldstructuresImage");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function ruinedportalButton() {
+  var x = document.getElementById("ruinedportalImage");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function shipwreckButton() {
+  var x = document.getElementById("shipwreckImage");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+window.onload = init;
+function init() {
+	if (window.Event) {
+	document.captureEvents(Event.MOUSEMOVE);
+	}
+	document.onmousemove = getCursorXY;
+}
+
+function getCursorXY(e) {
+	document.getElementById('cursorX').value = -812 + ((window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft));
+	document.getElementById('cursorY').value = -912 + ((window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop));
+}
+
+</script>
+
+</html>
