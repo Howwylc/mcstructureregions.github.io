@@ -7,7 +7,7 @@
   <ul>
 	<li>The <b style="color: #35F652">green</b> sections represent areas in which the structure can spawn.</li>
 	<li>The <b style="color: #F33B40">red</b> sections represent areas in which the structure cannot spawn.</li>
-	<li>These regions repeat infinitely in the same pattern of squares. Only the first region in each direction from (0,0) is modeled.</li>
+	<li>These regions repeat infinitely in the same pattern of squares. Regions 1400 blocks from (0,0) are modeled.</li>
 
   <input type="checkbox" onclick="monumentButton()" id="monument" name="monument" checked></input>
 	<label for="monument">Monument Regions</label><br>
@@ -20,15 +20,31 @@
   <input type="checkbox" onclick="shipwreckButton()" id="shipwreck" name="shipwreck" checked></input>
 	<label for="shipwreck">Shipwreck Regions</label><br>
 
-  <div id="monumentImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="monument.png"> </div>
-  <div id="oceanruinImage" style="left: 492px; top: 592px; position: absolute; visibility: visible; opacity:0.25"> <img src="oceanruin.png"> </div>
-  <div id="oldstructuresImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="oldstructures.png"> </div>
-  <div id="ruinedportalImage" style="left: 172px; top: 272px; position: absolute; visibility: visible; opacity:0.25"> <img src="ruined portal.png"> </div>
-  <div id="shipwreckImage" style="left: 428px; top: 528px; position: absolute; visibility: visible; opacity:0.25"> <img src="shipwreck.png"> </div>
+  <div id="monumentImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25;"> <img src="monument2.png"> </div>
+  <div id="oceanruinImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="oceanruin2.png"> </div>
+  <div id="oldstructuresImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="oldstructures2.png"> </div>
+  <div id="ruinedportalImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="ruined portal2.png"> </div>
+  <div id="shipwreckImage" style="left: 300px; top: 400px; position: absolute; visibility: visible; opacity:0.25"> <img src="shipwreck2.png"> </div>
+
+  <div id="monumentOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="monument outline.png"> </div>
+  <div id="oceanruinOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="oceanruin outline.png"> </div>
+  <div id="oldstructuresOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="oldstructures outline.png"> </div>
+  <div id="ruinedportalOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="ruined portal outline.png"> </div>
+  <div id="shipwreckOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="shipwreck outline.png"> </div>
 
   <div style="position: fixed; top: 0; width: 100%; overflow: hidden; background-color: #7ed7ed;">
   	<input type="text" id="cursorX" size="3"> X-position of the player
   	<input type="text" id="cursorY" size="3"> Z-position of the player
+	<input type="checkbox" onclick="monumentOutlineButton()" id="monumentOutline" name="monumentOutline"></input>
+		<label for="monumentOutline">Outline Monuments</label>
+ 	<input type="checkbox" onclick="oceanruinOutlineButton()" id="oceanruinOutline" name="oceanruinOutline"></input>
+		<label for="oceanruinOutline">Outline Ocean Ruin</label>
+	<input type="checkbox" onclick="oldstructuresOutlineButton()" id="oldstructuresOutline" name="oldstructuresOutline"></input>
+		<label for="oldstructuresOutline">Outline Old Structures</label>
+	<input type="checkbox" onclick="ruinedportalOutlineButton()" id="ruinedportalOutline" name="ruinedportalOutline"></input>
+		<label for="ruinedportalOutline">Outline Ruined Portal</label>
+	<input type="checkbox" onclick="shipwreckOutlineButton()" id="shipwreckOutline" name="shipwreckOutline"></input>
+		<label for="shipwreckOutline">Outline Shipwreck</label>
   </div>
 
 </body>
@@ -78,6 +94,60 @@ function shipwreckButton() {
     x.style.visibility = "hidden";
   }
 }
+	
+	
+	
+function monumentOutlineButton() {
+  var x = document.getElementById("monumentOutline");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function oceanruinOutlineButton() {
+  var x = document.getElementById("oceanruinOutline");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function oldstructuresOutlineButton() {
+  var x = document.getElementById("oldstructuresOutline");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function ruinedportalOutlineButton() {
+  var x = document.getElementById("ruinedportalOutline");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+
+function shipwreckOutlineButton() {
+  var x = document.getElementById("shipwreckOutline");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+  } else {
+    x.style.visibility = "hidden";
+  }
+}
+window.onload = init;
+function init() {
+	if (window.Event) {
+	document.captureEvents(Event.MOUSEMOVE);
+	}
+	document.onmousemove = getCursorXY;
+}
 
 window.onload = init;
 function init() {
@@ -87,9 +157,10 @@ function init() {
 	document.onmousemove = getCursorXY;
 }
 
+
 function getCursorXY(e) {
-	document.getElementById('cursorX').value = -812 + ((window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft));
-	document.getElementById('cursorY').value = -912 + ((window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop));
+	document.getElementById('cursorX').value = -1700 + ((window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft));
+	document.getElementById('cursorY').value = -1800 + ((window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop));
 }
 
 </script>
