@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <title>Structure Regions</title>
-<body style="background-color:black; color: white;">	
+<body style="background-color:black; color: white; font-size:25px">	
   <h1>Structure Region Viewer</h1>
 
-  <p>This is a model to help visualize structure regions in Minecraft</p>
+  <p>This is a model to help visualize structure regions in Minecraft. I recommend zooming your browser out to get a full view of the regions.</p>
   <ul>
 	<li>The <b style="color: #35F652">green</b> sections represent areas in which the structure can spawn.</li>
 	<li>The <b style="color: #F33B40">red</b> sections represent areas in which the structure cannot spawn.</li>
@@ -32,18 +32,18 @@
   <div id="ruinedportalOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="ruined portal outline.png"> </div>
   <div id="shipwreckOutline" style="left: 300px; top: 400px; position: absolute; visibility: hidden; opacity:1;"> <img src="shipwreck outline.png"> </div>
 
-  <div style="position: fixed; top: 0; width: 100%; overflow: hidden; background-color: #7ed7ed;">
-  	<input type="text" id="cursorX" size="3"> X-position of the player
-  	<input type="text" id="cursorY" size="3"> Z-position of the player
-	<input type="checkbox" onclick="monumentOutlineButton()" id="monumentOutline" name="monumentOutline"></input>
+  <div style="position: fixed; bottom: 0; width: 100%; overflow: hidden; background-color: #7ed7ed; font-size: 1.75rem">
+  	<input type="text" id="cursorX" size="3" style=" font-size: 50px"> X-position
+  	<input type="text" id="cursorY" size="3" style=" font-size: 50px"> Z-position
+	<input type="checkbox" onclick="monumentOutlineButton()" id="monumentOutline" name="monumentOutline" style=" width: 50px; height: 50px;"></input>
 		<label for="monumentOutline">Outline Monuments</label>
- 	<input type="checkbox" onclick="oceanruinOutlineButton()" id="oceanruinOutline" name="oceanruinOutline"></input>
+ 	<input type="checkbox" onclick="oceanruinOutlineButton()" id="oceanruinOutline" name="oceanruinOutline" style=" width: 50px; height: 50px;"></input>
 		<label for="oceanruinOutline">Outline Ocean Ruin</label>
-	<input type="checkbox" onclick="oldstructuresOutlineButton()" id="oldstructuresOutline" name="oldstructuresOutline"></input>
+	<input type="checkbox" onclick="oldstructuresOutlineButton()" id="oldstructuresOutline" name="oldstructuresOutline" style=" width: 50px; height: 50px;"></input>
 		<label for="oldstructuresOutline">Outline Old Structures</label>
-	<input type="checkbox" onclick="ruinedportalOutlineButton()" id="ruinedportalOutline" name="ruinedportalOutline"></input>
+	<input type="checkbox" onclick="ruinedportalOutlineButton()" id="ruinedportalOutline" name="ruinedportalOutline" style=" width: 50px; height: 50px;"></input>
 		<label for="ruinedportalOutline">Outline Ruined Portal</label>
-	<input type="checkbox" onclick="shipwreckOutlineButton()" id="shipwreckOutline" name="shipwreckOutline"></input>
+	<input type="checkbox" onclick="shipwreckOutlineButton()" id="shipwreckOutline" name="shipwreckOutline" style=" width: 50px; height: 50px;"></input>
 		<label for="shipwreckOutline">Outline Shipwreck</label>
   </div>
 
